@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(poppins.otf);
+}
+*{
+    font-family:'poppins';
+    padding:0;
+    margin:0;
+    outline:none;
+    font-style: none;
+    text-decoration: none;
+    box-sizing:border-box;
+}
+:root{
+    --theme-one: linear-gradient( 100deg, rgb(0, 0, 37),rgb(0, 0, 29));
+    --theme-two: rgb(249, 249, 249);
+    --grey-fade: rgb(183, 183, 183);
+    --border-color: rgb(169, 169, 169);
+    --buttons-color: rgb(30, 30, 30);
+    --main-color:rgb(0, 0, 70);
+    --white:white;
+}
+body{
+    text-transform: capitalize;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    min-height:100vh;
+    background:var(--theme-one)
+}
+.container{
+    width:880px;
+    background: var(--theme-two);
+    padding:30px;
+    border-radius: 10px;
+}
+.container.disable :where(.filters_Rotations,.reset_button,.Save_img){
+    opacity:0.6;
+    pointer-events: none;
+}
+h3{
+    font-weight:400;
+    margin-bottom: 15px;
+    font-size:19px;
+}
+.image_and_filters{
+    margin: 10px auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.filters_Rotations{
+     border-right: 1px solid var(--grey-fade);/*
+    border-top: 1px solid var(--grey-fade);
+    border-bottom: 1px solid var(--grey-fade); */
+    padding:15px;
+    /* border-radius: 5px; */
+}
+label.title{
+    font-size:15px;
+    display:block;
+    margin-bottom: 13px;
+    font-weight:400;
+}
+.filters button, .rotation_inversion button{
+    color: var(--buttons-color);
+    width: calc(100% / 2 - 4px);
+    margin-bottom: 8px;
+    border:0.1rem solid var(--border-color);
+    height:40px;
+    border-radius:3px;
+    background:var(--white);
+    transition:all .5s ease-in-out;
+}
+.filters button:hover,  .rotation_inversion button:hover{
+    background:linear-gradient(360deg, rgb(227, 227, 227), white);
+    transition:all .3s linear;
+}
+.filters button.active{
+    background:var(--main-color);
+    color:white;
+}
+.filters button:hover, .rotation_inversion button:hover{
+    cursor: pointer;
+}
+.filter_ranges{
+    margin-top:20px;
+    padding-right: 5px;
+}
+.filtervalues_filtername{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filtervalues_filtername label{
+    font-size:15px;
+    display:initial;
+    font-weight:300;
+}
+.filter_ranges input{
+    width:100%;
+    height:5px;
+    accent-color: var(--main-color);
+}
+.rotation_inversion{
+    margin-top: 20px;
+}
+.rotation_inversion button{
+    font-size:1.1em;
+    width: calc(100% / 4 - 4px);
+}
+.image{
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    margin-left: 20px;
+    /* border-left: 1px solid var(--grey-fade);
+    border-top: 1px solid var(--grey-fade);
+    border-bottom: 1px solid var(--grey-fade); */
+}
+.image img{
+    max-width:490px;
+    max-height: 335px;
+    width:100%;
+    height:100%;
+    object-fit: contain;
+}
+.lower_buttons{
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
+}
+.file-input{
+    display:none;
+}
+div.lower_buttons button{
+    padding:5px 10px 5px;
+    font-size: 13px;
+    height:43px;
+    border-radius: 5px;
+    border:1px solid var(--grey-fade);
+    background: white;
+    cursor: pointer;
+}
+div.lower_buttons button:hover,div.reset_button button.reset:hover,div.save_choose_btn button.choose_img:hover,div.save_choose_btn button.Save_img:hover{
+    background: transparent;
+    border:1px solid var(--grey-fade);
+    color:black;
+    transition: .2s linear;
+}
+div.save_choose_btn button:nth-of-type(1){
+    background:rgb(38, 38, 38);
+    color:white;
+    border:none;
+}
+div.save_choose_btn button:nth-of-type(2){
+    background:rgb(54, 0, 78);
+    color:white;
+    border:none;
+    outline:none;
+}
+
+/* ============== 810px downwards device=============== */
+@media screen and (max-width:870px) {
+    body{
+        background:white;
+    }   
+    .image_and_filters{
+        flex-direction: column-reverse;
+        margin: 10 auto;
+    }
+    h3{
+        text-align:center;
+        font-size:20px;
+        margin-bottom: 9px;
+    }
+    hr{
+        display:none;
+    }
+    hr:first-of-type{
+        margin-bottom:13px;
+    }
+    .filters_Rotations{
+        border: 1px solid var(--grey-fade);
+        margin-top:20px;
+   }
+}
+/* ============== 810px downwards device=============== */
+@media screen and (max-width:390px) {
+    .save_choose_btn,.lower_buttons,.reset_button{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        width:100%;
+    }
+    .lower_buttons button, .save_choose_btn button{
+        margin-bottom: 5px;
+        width:100%;
+    }
+
+}

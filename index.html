@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smicodes Image-Editor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/boxicons-2.1.4/css/boxicons.css">
+    <link rel="stylesheet" href="css/boxicons-2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <div class="container disable">
+        <h3> Perfect image editior</h3>
+        <hr>
+        <!-- image filter -->
+        <div class="image_and_filters">
+            <div class="filters_Rotations">
+                <!-- filters buttons -->
+                <div class="filters">
+                    <label class="title">Filters</label>
+                    <button class="fiter active" id="saturation">Saturation</button>
+                    <button class="fiter" id="brightness">Brightness</button>
+                    <button class="fiter" id="grayscale">grayscale</button>
+                    <button class="fiter" id="inversion">Inversion</button>
+                </div>
+                <!-- filter slider range -->
+                <div class="filter_ranges">
+                    <div class="filtervalues_filtername">
+                        <label class="title name">Saturation</label>
+                        <label class="title value">100%</label>
+                    </div>
+                    <input type="range" id="filter_range" min="0" max="200">
+                </div>
+                <!-- inversion and rotation button -->
+                <div class="rotation_inversion">
+                    <label class="title">Rotate and Flip</label>
+                    <button id="left"><i class="bx bx-rotate-left"></i></button>
+                    <button id="right"><i class="bx bx-rotate-right"></i></button>
+                    <button id="hzl"><i class="bx bx-reflect-horizontal"></i></button>
+                    <button id="vtl"><i class="bx bx-reflect-vertical"></i></button>
+                </div>
+            </div>
+            <div class="image">
+                <img src="images/cover.jpg" alt="">
+            </div>
+        </div>
+        <hr>
+        <!-- lower buttons begins -->
+        <div class="lower_buttons">
+            <!-- reset button -->
+            <div class="reset_button">
+                <button class="reset">Reset Filters</button>
+            </div>
+            <!-- save and edit button -->
+            <div class="save_choose_btn">
+                <input type="file" class="file-input" accept="image/*" hidden>
+                <button class="choose_img">Choose Image</button>
+                <button class="Save_img">Save Image</button>
+            </div>
+            <!-- end of lower button -->
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
